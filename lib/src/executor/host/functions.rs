@@ -156,8 +156,14 @@ host_functions! {
     ext_logging_log_version_1,
     ext_logging_max_level_version_1,
     ext_panic_handler_abort_on_panic_version_1,
+    // bool native func
+    ext_vrf_runtime_interface_verify_vrf_version_1,
+    ext_attestation_runtime_interface_verify_report_version_1,
+    ext_attestation_runtime_interface_verify_report_hash_version_1,
+    ext_verify_cmt_sig_compute_hash_on_elements_version_1,
+    ext_verify_cmt_sig_cover_message_to_starknet_hash_version_1,
+    ext_verify_cmt_sig_native_verify_starknet_sig_version_1,
 }
-
 impl HostFunction {
     /// Returns the signature of this host function.
     // TODO: make this a `const fn` function
@@ -455,6 +461,24 @@ impl HostFunction {
             }
             HostFunction::ext_panic_handler_abort_on_panic_version_1 => {
                 crate::signature!((vm::ValueType::I64) => ())
+            }
+            HostFunction::ext_vrf_runtime_interface_verify_vrf_version_1 => {
+                crate::signature!((vm::ValueType::I64, vm::ValueType::I64, vm::ValueType::I64, vm::ValueType::I64) => vm::ValueType::I32)
+            }
+            HostFunction::ext_attestation_runtime_interface_verify_report_version_1 => {
+                crate::signature!((vm::ValueType::I64, vm::ValueType::I64, vm::ValueType::I64, vm::ValueType::I64) => vm::ValueType::I64)
+            }
+            HostFunction::ext_attestation_runtime_interface_verify_report_hash_version_1 => {
+                crate::signature!((vm::ValueType::I64, vm::ValueType::I64, vm::ValueType::I64, vm::ValueType::I64) => vm::ValueType::I64)
+            }
+            HostFunction::ext_verify_cmt_sig_compute_hash_on_elements_version_1 => {
+                crate::signature!((vm::ValueType::I64) => vm::ValueType::I64)
+            }
+            HostFunction::ext_verify_cmt_sig_cover_message_to_starknet_hash_version_1 => {
+                crate::signature!((vm::ValueType::I32) => vm::ValueType::I64)
+            }
+            HostFunction::ext_verify_cmt_sig_native_verify_starknet_sig_version_1 => {
+                crate::signature!((vm::ValueType::I32, vm::ValueType::I32, vm::ValueType::I32) => vm::ValueType::I32)
             }
         }
     }
