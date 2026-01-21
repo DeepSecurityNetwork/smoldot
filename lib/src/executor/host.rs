@@ -3865,7 +3865,7 @@ impl VerifyAttestationReport {
 
     /// Verify report, return `true` if it is valid, pk for the device and enclave_hash.
     pub fn verify_report(&self) -> (bool, Vec<u8>, Vec<u8>) {
-        use def_occlum_ra::attestation::{AttestationReport, DcapAttestation, IasAttestation, AttestationStyle};
+        use occlum_ra::attestation::{AttestationReport, DcapAttestation, IasAttestation, AttestationStyle};
         let timestamp = self.timestamp();
         let attestation_report = match AttestationReport::from_payload(self.report().as_ref()) {
             Ok(report) => report,

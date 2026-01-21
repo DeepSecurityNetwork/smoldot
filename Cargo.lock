@@ -865,29 +865,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "def-occlum-ra"
-version = "0.1.0"
-source = "git+https://github.com/deepsafe/occlum-ra#8d5cdcbc413bf7bc15ba8ba1a028cecd6d0f99f4"
-dependencies = [
- "base64 0.9.3",
- "bit-vec",
- "chrono",
- "hex",
- "http_req",
- "httparse",
- "itertools 0.8.2",
- "log",
- "rand",
- "ring",
- "rustls",
- "serde",
- "serde_json",
- "sgx_types",
- "sha2 0.8.2",
- "webpki",
-]
-
-[[package]]
 name = "derive_more"
 version = "0.99.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1819,6 +1796,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "occlum-ra"
+version = "0.1.0"
+source = "git+https://github.com/DeepSecurityNetwork/occlum-ra?branch=deep#13c252d8697c16d4271109e03e4c3b2713fed0cb"
+dependencies = [
+ "base64 0.9.3",
+ "bit-vec",
+ "chrono",
+ "hex",
+ "http_req",
+ "httparse",
+ "itertools 0.8.2",
+ "log",
+ "rand",
+ "ring",
+ "rustls",
+ "serde",
+ "serde_json",
+ "sgx_types",
+ "sha2 0.8.2",
+ "webpki",
+]
+
+[[package]]
 name = "once_cell"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2525,7 +2525,6 @@ dependencies = [
  "chacha20",
  "criterion",
  "crossbeam-queue",
- "def-occlum-ra",
  "derive_more",
  "ed25519-zebra",
  "either",
@@ -2545,6 +2544,7 @@ dependencies = [
  "num-bigint",
  "num-rational",
  "num-traits",
+ "occlum-ra",
  "parity-scale-codec",
  "parking_lot",
  "pbkdf2",
