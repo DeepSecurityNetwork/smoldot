@@ -1798,7 +1798,7 @@ dependencies = [
 [[package]]
 name = "occlum-ra"
 version = "0.1.0"
-source = "git+https://github.com/DeepSecurityNetwork/occlum-ra?branch=deep#13c252d8697c16d4271109e03e4c3b2713fed0cb"
+source = "git+https://github.com/safexn/occlum-ra?branch=deep#13c252d8697c16d4271109e03e4c3b2713fed0cb"
 dependencies = [
  "base64 0.9.3",
  "bit-vec",
